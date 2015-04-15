@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>Dustin Moris Gorski</owners>
+    <projectUrl>https://github.com/dustinmoris/HandleErrorModule</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/dustinmoris/HandleErrorModule/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright 2015</copyright>
+    <tags>Light ASP.NET Error Handler Module</tags>
+  </metadata>
+  <files>
+    <file src="*.install.xdt" target="Content" />
+    <file src="*.uninstall.xdt" target="Content" />
+  </files>
+</package>
