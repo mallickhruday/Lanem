@@ -1,4 +1,7 @@
 # Lanem
+
+[![Build status](https://ci.appveyor.com/api/projects/status/ta3vwfttw0g85l2a/branch/master?svg=true)](https://ci.appveyor.com/project/dustinmoris/lanem/branch/master)
+
 **L**ight **A**sp.**N**et **E**rror Handler **M**odule for processing and logging ASP.NET application exceptions.
 
 ## About
