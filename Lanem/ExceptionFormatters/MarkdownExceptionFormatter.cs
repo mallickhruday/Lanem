@@ -10,9 +10,7 @@ namespace Lanem.ExceptionFormatters
         {
             var builder = new StringBuilder();
 
-            builder.AppendLine("# UTC");
-            builder.AppendLine(DateTime.UtcNow.ToString("U"));
-            builder.AppendLine("-------------");
+            builder.AppendLine(string.Concat("# ", DateTime.UtcNow.ToString("U"), " (UTC)"));
 
             Format(builder, exception);
 
@@ -35,7 +33,7 @@ namespace Lanem.ExceptionFormatters
             Format(builder, "StackTrace", exception.StackTrace);
 
             builder.AppendLine("");
-            builder.AppendLine("# Data");
+            builder.AppendLine("## Data");
             if (exception.Data.Keys.Count > 0)
             {
                 foreach (var key in exception.Data.Keys)
@@ -57,7 +55,7 @@ namespace Lanem.ExceptionFormatters
         private static void Format(StringBuilder builder, string title, string value)
         {
             builder.AppendLine("");
-            builder.AppendLine(string.Format("# {0}", title));
+            builder.AppendLine(string.Format("## {0}", title));
             builder.AppendLine(value ?? "Null");
         }
     }
