@@ -3,8 +3,8 @@
   <appSettings xdt:Transform="InsertIfMissing">
     <add key="Lanem_Log_Directory_Path" value="~\App_Data\error-logs" xdt:Transform="Insert" />
   </appSettings>
-  <system.webServer>
-    <modules>
+  <system.webServer xdt:Transform="InsertIfMissing">
+    <modules xdt:Transform="InsertIfMissing">
       <add name="Lanem" type="Lanem.ErrorHandlerModule, Lanem" xdt:Transform="Insert" />
     </modules>
   </system.webServer>
