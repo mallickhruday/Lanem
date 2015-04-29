@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Configuration;
 using System.Web;
+using System.Web.Configuration;
 using Lanem.ErrorFilters;
 using Lanem.ErrorLoggers;
 using Lanem.ExceptionFormatters;
@@ -24,19 +24,20 @@ namespace Lanem
 
             var exception = application.Server.GetLastError();
 
-            LogError(exception);
+            LogError(application, exception);
         }
 
-        protected virtual void LogError(Exception exception)
+        protected virtual void LogError(HttpApplication application, Exception exception)
         {
-            var errorLogger = CreateErrorLogger();
+            var errorLogger = CreateErrorLogger(application);
 
             errorLogger.Log(exception);
         }
 
-        protected virtual IErrorLogger CreateErrorLogger()
+        protected virtual IErrorLogger CreateErrorLogger(HttpApplication application)
         {
-            var errorLogPath = ConfigurationManager.AppSettings["Lanem_Log_Directory_Path"];
+            var errorLogPath = application.Server.MapPath(
+                WebConfigurationManager.AppSettings["Lanem_Log_Directory_Path"]);
 
             return new FileErrorLogger(
                 new NoErrorFilter(),
