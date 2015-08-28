@@ -6,8 +6,8 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>Dustin Moris Gorski</owners>
-    <projectUrl>https://github.com/dustinmoris/HandleErrorModule</projectUrl>
-    <licenseUrl>https://raw.githubusercontent.com/dustinmoris/HandleErrorModule/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/dustinmoris/Lanem</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/dustinmoris/Lanem/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>$description$</description>
     <copyright>Copyright 2015</copyright>
