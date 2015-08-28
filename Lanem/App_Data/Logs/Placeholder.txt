@@ -1,0 +1,3 @@
+﻿You can delete this file.
+
+An empty placeholder file was required to create the Logs folder via NuGet.

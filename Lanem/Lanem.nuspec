@@ -14,6 +14,7 @@
     <tags>Light ASP.NET Error Handler Module</tags>
   </metadata>
   <files>
+    <file src="App_Data\Logs\*" target="App_Data\Logs\" />
     <file src="*.install.xdt" target="Content" />
     <file src="*.uninstall.xdt" target="Content" />
   </files>
