@@ -55,7 +55,7 @@ namespace Lanem.ExceptionFormatters
         private static void Format(StringBuilder builder, string title, string value)
         {
             builder.AppendLine("");
-            builder.AppendLine($"## {title}");
+            builder.AppendLine(string.Format("## {0}", title));
             builder.AppendLine(value ?? "Null");
         }
     }
