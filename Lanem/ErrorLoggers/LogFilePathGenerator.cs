@@ -13,7 +13,7 @@ namespace Lanem.ErrorLoggers
 
         public string CreateNewLogFilePath()
         {
-            return string.Format("{0}\\{1}_{2}.log", _logDirectoryPath, CreateCurrentDateString(), CreateUniqueString());
+            return $"{_logDirectoryPath}\\{CreateCurrentDateString()}_{CreateUniqueString()}.log";
         }
 
         protected virtual string CreateCurrentDateString()
