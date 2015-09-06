@@ -13,7 +13,7 @@ before_build:
 build_script:
   - ps: .\Build.ps1
 after_test:
-  -ps: .\AfterTest.ps1
+  - ps: .\AfterTest.ps1
 artifacts:
   - path: '**\*.nupkg'
     name: Lanem
