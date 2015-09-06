@@ -1,5 +1,5 @@
 # Remove the revision number for versioning the NuGet packages:
-$version = $env:APPVEYOR_BUILD_VERSION
+$version = [version]$env:APPVEYOR_BUILD_VERSION
 $semanticVersion = "$($version.Major).$($version.Minor).$($version.Build)"
 
 # Only create a NuGet package for projects with a .nuspec file:
