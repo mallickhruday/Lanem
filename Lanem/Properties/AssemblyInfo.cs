@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Lanem")]
-[assembly: AssemblyDescription("Light ASP.NET Error Handler Module")]
+[assembly: AssemblyDescription("Light ASP.NET Error Handler Module for processing and logging ASP.NET application exceptions.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Dustin Moris Gorski")]
 [assembly: AssemblyProduct("Lanem")]

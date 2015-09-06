@@ -41,8 +41,7 @@ namespace Lanem.ExceptionFormatters
                     Format(builder, key.ToString(), exception.Data[key].ToString());
                 }
             }
-
-            Format(builder, "HResult", exception.HResult.ToString(CultureInfo.InvariantCulture));
+            
             Format(builder, "HelpLink", exception.HelpLink);
 
             if (exception.InnerException == null)

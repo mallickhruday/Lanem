@@ -1,8 +1,12 @@
 version: 1.4.0.{build}
-skip_tags: false
+skip_tags: true
 os:
   - Visual Studio 2015
-configuration: Release
+configuration:
+- Release
+- Release 4.5
+- Release 4.0
+- Release 3.5
 platform: Any CPU
 assembly_info:
   patch: true
