@@ -3,5 +3,5 @@ $nuspecFiles = Get-ChildItem -Filter *.nuspec -Recurse
 
 foreach($nuspecFile in $nuspecFiles)
 {
-    nuget pack $nuspecFile.FullName.Replace(".nuspec", ".csproj") -Symbol
+    nuget pack $nuspecFile.FullName.Replace(".nuspec", ".csproj") -Symbols
 }
