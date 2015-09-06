@@ -17,10 +17,7 @@
     <file src="*.install.xdt" target="Content" />
     <file src="*.uninstall.xdt" target="Content" />
     <file src="bin\Release 3.5\Lanem.dll" target="lib\net35\Lanem.dll" />
-    <file src="bin\Release 3.5\Lanem.pdb" target="lib\net35\Lanem.pdb" />
     <file src="bin\Release 4.0\Lanem.dll" target="lib\net40\Lanem.dll" />
-    <file src="bin\Release 4.0\Lanem.pdb" target="lib\net40\Lanem.pdb" />
     <file src="bin\Release 4.5\Lanem.dll" target="lib\net45\Lanem.dll" />
-    <file src="bin\Release 4.5\Lanem.pdb" target="lib\net45\Lanem.pdb" />
   </files>
 </package>
