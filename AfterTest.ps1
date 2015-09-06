@@ -1,13 +1,11 @@
-# Determine the 
-
-$buildVersion = $env:APPVEYOR_BUILD_VERSION
-Write-Host $buildVersion.GetType()
-Write-Host $buildVersion
+# Remove the revision number for versioning the NuGet packages:
+$version = $env:APPVEYOR_BUILD_VERSION
+$semanticVersion = "$($version.Major).$($version.Minor).$($version.Build)"
 
 # Only create a NuGet package for projects with a .nuspec file:
 $nuspecFiles = Get-ChildItem -Filter *.nuspec -Recurse
 
 foreach($nuspecFile in $nuspecFiles)
 {
-    NuGet.exe pack $nuspecFile.FullName.Replace(".nuspec", ".csproj") -Symbols
+    NuGet.exe pack $nuspecFile.FullName.Replace(".nuspec", ".csproj") -Version $semanticVersion -Symbols
 }
