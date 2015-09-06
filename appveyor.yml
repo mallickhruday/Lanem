@@ -10,7 +10,7 @@ assembly_info:
   assembly_informational_version: '{version}'
 before_build:
   - nuget restore
-build:
+build_script:
   - ps: .\Build.ps1
 after_test:
   -ps: .\AfterTest.ps1
