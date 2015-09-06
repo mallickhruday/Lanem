@@ -13,7 +13,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "About", "About", "{F4A0D0C4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F8F0FC51-BF41-4FA5-AB37-D44C0999694C}"
 	ProjectSection(SolutionItems) = preProject
+		AfterTest.ps1 = AfterTest.ps1
 		appveyor.yml = appveyor.yml
+		Build.ps1 = Build.ps1
 	EndProjectSection
 EndProject
 Global

@@ -23,5 +23,6 @@
     <file src="bin\Release 4.5\Lanem.dll" target="lib\net45\Lanem.dll" />
     <file src="bin\Release 4.5\Lanem.pdb" target="lib\net45\Lanem.pdb" />
     <file src="bin\Release\Lanem.pdb" target="lib\net46\Lanem.pdb" />
+    <file src="**\*.cs" target="src" />
   </files>
 </package>
