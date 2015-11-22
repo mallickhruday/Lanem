@@ -3,8 +3,8 @@ using System.Web;
 using System.Web.Configuration;
 using Lanem.ErrorFilters;
 using Lanem.ErrorLoggers;
-using Lanem.ExceptionFormatters;
 using Lanem.IO;
+using Lanem.Serializers;
 
 namespace Lanem
 {
@@ -31,7 +31,13 @@ namespace Lanem
         {
             var errorLogger = CreateErrorLogger(application);
 
-            errorLogger.Log(exception);
+            var errorDetails = new ErrorDetails
+            {
+                Exception = exception,
+                HttpRequest = application.Request
+            };
+
+            errorLogger.Log(errorDetails);
         }
 
         protected virtual IErrorLogger CreateErrorLogger(HttpApplication application)
@@ -41,7 +47,7 @@ namespace Lanem
 
             return new FileErrorLogger(
                 new NoErrorFilter(),
-                new MarkdownExceptionFormatter(),
+                new JsonExceptionSerializer(),
                 new LogFilePathGenerator(errorLogPath),
                 new FileWriter());
         }
@@ -49,5 +55,11 @@ namespace Lanem
         public void Dispose()
         {
         }
+    }
+
+    public sealed class ErrorDetails
+    {
+        public Exception Exception { get; set; }
+        public HttpRequest HttpRequest { get; set; }
     }
 }

@@ -18,6 +18,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{F8F0FC51
 		Build.ps1 = Build.ps1
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanem.Test", "Lanem.Test\Lanem.Test.csproj", "{2F79980B-66EE-4764-9783-D582596CD9A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,16 @@ Global
 		{FB640465-AD8F-4F86-88B6-5131283C3D3C}.Release 4.5|Any CPU.Build.0 = Release 4.5|Any CPU
 		{FB640465-AD8F-4F86-88B6-5131283C3D3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB640465-AD8F-4F86-88B6-5131283C3D3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release 3.5|Any CPU.ActiveCfg = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release 3.5|Any CPU.Build.0 = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release 4.0|Any CPU.ActiveCfg = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release 4.0|Any CPU.Build.0 = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release 4.5|Any CPU.ActiveCfg = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release 4.5|Any CPU.Build.0 = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F79980B-66EE-4764-9783-D582596CD9A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

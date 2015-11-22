@@ -18,7 +18,7 @@ namespace Lanem.ErrorLoggers
 
         protected virtual string CreateCurrentDateString()
         {
-            return DateTime.UtcNow.ToString("O").Replace(":", ".");
+            return DateTime.UtcNow.Ticks.ToString();
         }
 
         protected virtual string CreateUniqueString()
