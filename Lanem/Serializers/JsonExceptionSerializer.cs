@@ -1,11 +1,11 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace Lanem.ExceptionFormatters
+namespace Lanem.Serializers
 {
-    public sealed class JsonExceptionFormatter : IExceptionFormatter
+    public sealed class JsonExceptionSerializer : IExceptionSerializer
     {
-        public string Format(Exception exception)
+        public string Serialize(Exception exception)
         {
             return JsonConvert.SerializeObject(exception, Formatting.Indented);
         }

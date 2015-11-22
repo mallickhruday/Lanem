@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Globalization;
 using System.Text;
 
-namespace Lanem.ExceptionFormatters
+namespace Lanem.Serializers
 {
-    public sealed class MarkdownExceptionFormatter : IExceptionFormatter
+    public sealed class MarkdownExceptionSerializer : IExceptionSerializer
     {
-        public string Format(Exception exception)
+        public string Serialize(Exception exception)
         {
             var builder = new StringBuilder();
 

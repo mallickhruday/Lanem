@@ -72,15 +72,15 @@
   <ItemGroup>
     <Compile Include="ErrorLoggers\FileErrorLogger.cs" />
     <Compile Include="Extensions\HttpRequestExtensions.cs" />
-    <Compile Include="ExceptionFormatters\JsonExceptionFormatter.cs" />
+    <Compile Include="Serializers\JsonExceptionSerializer.cs" />
     <Compile Include="IO\FileWriter.cs" />
     <Compile Include="ErrorFilters\IErrorFilter.cs" />
     <Compile Include="ErrorLoggers\IErrorLogger.cs" />
-    <Compile Include="ExceptionFormatters\IExceptionFormatter.cs" />
+    <Compile Include="Serializers\IExceptionSerializer.cs" />
     <Compile Include="IO\IFileWriter.cs" />
     <Compile Include="ErrorLoggers\ILogFilePathGenerator.cs" />
     <Compile Include="ErrorLoggers\LogFilePathGenerator.cs" />
-    <Compile Include="ExceptionFormatters\MarkdownExceptionFormatter.cs" />
+    <Compile Include="Serializers\MarkdownExceptionSerializer.cs" />
     <Compile Include="ErrorFilters\NoErrorFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ErrorHandlerModule.cs" />
