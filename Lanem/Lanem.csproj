@@ -61,12 +61,18 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorLoggers\FileErrorLogger.cs" />
+    <Compile Include="Extensions\HttpRequestExtensions.cs" />
+    <Compile Include="ExceptionFormatters\JsonExceptionFormatter.cs" />
     <Compile Include="IO\FileWriter.cs" />
     <Compile Include="ErrorFilters\IErrorFilter.cs" />
     <Compile Include="ErrorLoggers\IErrorLogger.cs" />
@@ -83,6 +89,7 @@
     <None Include="Lanem.nuspec">
       <SubType>Designer</SubType>
     </None>
+    <None Include="packages.config" />
     <None Include="Web.config.install.xdt">
       <SubType>Designer</SubType>
     </None>

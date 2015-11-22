@@ -31,7 +31,13 @@ namespace Lanem
         {
             var errorLogger = CreateErrorLogger(application);
 
-            errorLogger.Log(exception);
+            var errorDetails = new ErrorDetails
+            {
+                Exception = exception,
+                HttpRequest = application.Request
+            };
+
+            errorLogger.Log(errorDetails);
         }
 
         protected virtual IErrorLogger CreateErrorLogger(HttpApplication application)
@@ -41,7 +47,7 @@ namespace Lanem
 
             return new FileErrorLogger(
                 new NoErrorFilter(),
-                new MarkdownExceptionFormatter(),
+                new JsonExceptionFormatter(),
                 new LogFilePathGenerator(errorLogPath),
                 new FileWriter());
         }
@@ -49,5 +55,11 @@ namespace Lanem
         public void Dispose()
         {
         }
+    }
+
+    public sealed class ErrorDetails
+    {
+        public Exception Exception { get; set; }
+        public HttpRequest HttpRequest { get; set; }
     }
 }

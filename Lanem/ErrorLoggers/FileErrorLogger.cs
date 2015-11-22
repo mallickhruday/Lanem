@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text;
 using Lanem.ErrorFilters;
 using Lanem.ExceptionFormatters;
+using Lanem.Extensions;
 using Lanem.IO;
 
 namespace Lanem.ErrorLoggers
@@ -24,16 +26,28 @@ namespace Lanem.ErrorLoggers
             _fileWriter = fileWriter;
         }
 
-        public void Log(Exception exception)
+        public void Log(ErrorDetails errorDetails)
         {
-            if (_errorFilter.SkipError(exception))
+            if (_errorFilter.SkipError(errorDetails.Exception))
                 return;
+            
+            var formattedException = _formatter.Format(errorDetails.Exception);
+            var rawRequest = errorDetails.HttpRequest.AsRawString();
 
-            var content = _formatter.Format(exception);
+            var content = new StringBuilder();
+            content.AppendLine(DateTime.UtcNow.ToString("dddd, dd MMMM yyyy HH:mm:ss"));
+            content.AppendLine("");
+            content.AppendLine("Exception:");
+            content.AppendLine("--------------");
+            content.AppendLine(formattedException);
+            content.AppendLine("");
+            content.AppendLine("HTTP Request:");
+            content.AppendLine("--------------");
+            content.AppendLine(rawRequest);
 
             var logFilePath = _logFilePathGenerator.CreateNewLogFilePath();
 
-            _fileWriter.Write(logFilePath, content);
+            _fileWriter.Write(logFilePath, content.ToString());
         }
     }
 }
