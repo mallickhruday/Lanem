@@ -24,7 +24,7 @@ Please use the official [nuget.org](https://www.nuget.org/) feed to download and
 PM> Install-Package Lanem
 ```
 
-This project follows the [Semantic Versioning](http://semver.org/).
+This project follows [Semantic Versioning](http://semver.org/).
 
 ## Usage
 
@@ -32,7 +32,7 @@ By default the error handler logs all exceptions into your local file storage. Y
 
 ```
 <appSettings>
-    <add key="Lanem_Log_Directory_Path" value="~\App_Data\Logs"/>
+  <add key="Lanem_Log_Directory_Path" value="~\App_Data\Logs"/>
 </appSettings>
 ```
 
@@ -53,9 +53,9 @@ public class CustomErrorHandlerModule : ErrorHandlerModule
 You must swap your custom error handler with the default one in your web.config:
 ```
 <system.webServer>
-    <modules>
-        <add name="CustomErrorHandler" type="MyNamespace.CustomErrorHandlerModule, MyAssembly"/>
-    </modules>
+  <modules>
+    <add name="CustomErrorHandler" type="MyNamespace.CustomErrorHandlerModule, MyAssembly"/>
+  </modules>
 </system.webServer>
 ```
 
