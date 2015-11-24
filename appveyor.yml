@@ -21,7 +21,7 @@ deploy:
   api_key:
     secure: +XDgIu4Tmln7LKedNmQgMFnyKTxxuCKFRK3V5oKEfwZiakPXRd5C7OueEGBL50oh
   skip_symbols: false
-  artifact: /.*\.nupkg/
+  artifact: ^Lanem.*\.nupkg
   on:
     branch: master
     appveyor_repo_tag: true
