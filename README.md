@@ -183,4 +183,4 @@ DNT: 1
 
 Feedback is more than welcome and pull requests are accepted!
 
-You can either contact me via GitHub or find me on [http://dusted.codes](http://dusted.codes/).
+You can either contact me via GitHub or find me on [dusted.codes](http://dusted.codes/).
