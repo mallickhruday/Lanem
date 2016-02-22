@@ -1,4 +1,4 @@
-version: 2.0.0.{build}
+version: 3.0.0.{build}
 os:
   - Visual Studio 2015
 assembly_info:
@@ -24,4 +24,3 @@ deploy:
   artifact: ^Lanem.*\.nupkg
   on:
     branch: master
-    appveyor_repo_tag: true

@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace Lanem.ErrorLoggers
+namespace Lanem.IO
 {
-    public class LogFilePathGenerator : ILogFilePathGenerator
+    public class FileNameGenerator : IFileNameGenerator
     {
         private readonly string _logDirectoryPath;
 
-        public LogFilePathGenerator(string logDirectoryPath)
+        public FileNameGenerator(string logDirectoryPath)
         {
             _logDirectoryPath = logDirectoryPath;
         }
 
-        public string CreateNewLogFilePath()
+        public string CreateFileName()
         {
-            return $"{_logDirectoryPath}\\{CreateCurrentDateString()}_{CreateUniqueString()}.log";
+            return $"{_logDirectoryPath}\\{CreateCurrentDateString()}.{CreateUniqueString()}.log";
         }
 
         protected virtual string CreateCurrentDateString()

@@ -5,7 +5,7 @@ namespace Lanem.Extensions
 {
     public static class HttpRequestExtensions
     {
-        public static string AsRawString(this HttpRequest request)
+        public static string ToRawString(this HttpRequest request)
         {
             using (var writer = new StringWriter())
             {

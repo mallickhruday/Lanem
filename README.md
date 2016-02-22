@@ -8,17 +8,17 @@
 [![Build status](https://ci-buildstats.azurewebsites.net/appveyor/chart/dustinmoris/lanem)](https://ci.appveyor.com/project/dustinmoris/lanem/history)
 
 ## About
-Lanem is an extremely light weight HttpModule to globally handle ASP.NET errors.
+Lanem is an extremely light weight HttpModule to globally log ASP.NET errors.
 
 It doesn't implement any HTTP endpoints to view error logs from a remote location. The logs can only be accessed by someone who has access to the production environment.
 
 ## Support
 
-Currently the project supports ASP.NET applications built with .NET Framework 3.5, 4.0, 4.5 and 4.6.
+Lanem works with ASP.NET applications built with .NET Framework 3.5, 4.0, 4.5 and 4.6.
 
 ## Installation
 
-Please use the official [nuget.org](https://www.nuget.org/) feed to download and install the package in your ASP.NET application.
+Please use the official [NuGet package](https://www.nuget.org/packages/Lanem) to install the package in your ASP.NET application.
 
 ```
 PM> Install-Package Lanem

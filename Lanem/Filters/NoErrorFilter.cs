@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Lanem.ErrorFilters
+namespace Lanem.Filters
 {
     public class NoErrorFilter : IErrorFilter
     {
