@@ -5,27 +5,35 @@ namespace Lanem.Extensions
 {
     public static class HttpRequestExtensions
     {
-        public static string ToRawString(this HttpRequest request)
+        /// <summary>
+        /// Converts a <see cref="HttpRequest"/> into its raw string representation as it was received over the HTTP protocol.
+        /// </summary>
+        /// <param name="httpRequest">The HTTP request to convert into a string.</param>
+        /// <returns>Plain text representation of the given HTTP request.</returns>
+        public static string ToRawString(this HttpRequest httpRequest)
         {
             using (var writer = new StringWriter())
             {
-                writer.Write(request.HttpMethod);
-                writer.Write(" " + request.Url);
-                writer.WriteLine(" " + request.ServerVariables["SERVER_PROTOCOL"]);
+                writer.Write(httpRequest.HttpMethod);
+                writer.Write(" " + httpRequest.Url);
+                writer.WriteLine(" " + httpRequest.ServerVariables["SERVER_PROTOCOL"]);
 
-                foreach (var key in request.Headers.AllKeys)
+                foreach (var key in httpRequest.Headers.AllKeys)
                 {
-                    writer.WriteLine("{0}: {1}", key, request.Headers[key]);
+                    writer.WriteLine($"{key}: {httpRequest.Headers[key]}");
                 }
+
+                string body;
+                using (var reader = new StreamReader(httpRequest.InputStream))
+                {
+                    body = reader.ReadToEnd();
+                }
+
+                if (string.IsNullOrEmpty(body))
+                    return writer.ToString();
 
                 writer.WriteLine();
-
-                using (var reader = new StreamReader(request.InputStream))
-                {
-                    var body = reader.ReadToEnd();
-                    writer.WriteLine(body);
-                }
-
+                writer.WriteLine(body);
                 return writer.ToString();
             }
         }
