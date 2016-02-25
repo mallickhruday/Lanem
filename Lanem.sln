@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanem.Test", "Lanem.Test\La
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lanem.Tests", "Lanem.Tests\Lanem.Tests.csproj", "{F031377E-73E9-4294-90D2-C7EAD681A733}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Guardo", "Guardo\Guardo.csproj", "{01D69D4B-66C2-45F7-9EBB-2011AA71071D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,16 @@ Global
 		{F031377E-73E9-4294-90D2-C7EAD681A733}.Release 4.5|Any CPU.Build.0 = Release|Any CPU
 		{F031377E-73E9-4294-90D2-C7EAD681A733}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F031377E-73E9-4294-90D2-C7EAD681A733}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release 3.5|Any CPU.ActiveCfg = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release 3.5|Any CPU.Build.0 = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release 4.0|Any CPU.ActiveCfg = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release 4.0|Any CPU.Build.0 = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release 4.5|Any CPU.ActiveCfg = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release 4.5|Any CPU.Build.0 = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01D69D4B-66C2-45F7-9EBB-2011AA71071D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

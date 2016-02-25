@@ -76,6 +76,7 @@
     <Compile Include="IO\FileWriter.cs" />
     <Compile Include="Filters\IExceptionFilter.cs" />
     <Compile Include="IErrorLogger.cs" />
+    <Compile Include="Loggers\Requires.cs" />
     <Compile Include="Parsers\IErrorParser.cs" />
     <Compile Include="Parsers\HumanReadableErrorParser.cs" />
     <Compile Include="IO\IFileWriter.cs" />
@@ -96,7 +97,12 @@
     </None>
     <None Include="Web.config.uninstall.xdt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Guardo\Guardo.csproj">
+      <Project>{01d69d4b-66c2-45f7-9ebb-2011aa71071d}</Project>
+      <Name>Guardo</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Logs\Placeholder.txt" />
   </ItemGroup>

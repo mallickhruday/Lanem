@@ -1,4 +1,5 @@
-﻿using Lanem.Filters;
+﻿using System.Web.UI.WebControls;
+using Lanem.Filters;
 using Lanem.IO;
 using Lanem.Parsers;
 
@@ -17,6 +18,19 @@ namespace Lanem.Loggers
             IFileNameGenerator fileNameGenerator,
             IFileWriter fileWriter)
         {
+            // SantaClause
+            // Guardo
+
+            // Throw.IfNull(exceptionFilter);
+
+            // Validate.NotNull(exceptionFilter);
+
+            // Requires.NotNull
+
+            // MustBe.NotNull
+
+            // 
+
             _exceptionFilter = exceptionFilter;
             _errorParser = errorParser;
             _fileNameGenerator = fileNameGenerator;
