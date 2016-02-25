@@ -9,7 +9,7 @@ namespace Lanem.Tests
     public class HttpRequestExtensionTests
     {
         [Test]
-        public void ToRawString_WithEmptyRequest_ReturnsOneLine()
+        public void ToRawString_With_Empty_Request_Returns_OneLine()
         {
             var httpRequest = new HttpRequest(
                 string.Empty, 
