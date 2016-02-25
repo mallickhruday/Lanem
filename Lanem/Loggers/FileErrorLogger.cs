@@ -9,18 +9,18 @@ namespace Lanem.Loggers
 {
     public sealed class FileErrorLogger : IErrorLogger
     {
-        private readonly IErrorFilter _errorFilter;
+        private readonly IExceptionFilter _exceptionFilter;
         private readonly IErrorParser _errorParser;
         private readonly IFileNameGenerator _fileNameGenerator;
         private readonly IFileWriter _fileWriter;
 
         public FileErrorLogger(
-            IErrorFilter errorFilter,
+            IExceptionFilter exceptionFilter,
             IErrorParser errorParser,
             IFileNameGenerator fileNameGenerator,
             IFileWriter fileWriter)
         {
-            _errorFilter = errorFilter;
+            _exceptionFilter = exceptionFilter;
             _errorParser = errorParser;
             _fileNameGenerator = fileNameGenerator;
             _fileWriter = fileWriter;
@@ -28,11 +28,11 @@ namespace Lanem.Loggers
 
         public void Log(Error error)
         {
-            if (_errorFilter.SkipError(error.Exception))
+            if (_exceptionFilter.SkipException(error.Exception))
                 return;
 
             var parsedError = _errorParser.Parse(error);
-            var fileName = _fileNameGenerator.CreateFileName();
+            var fileName = _fileNameGenerator.GenerateFileName();
 
             _fileWriter.Write(fileName, parsedError);
         }

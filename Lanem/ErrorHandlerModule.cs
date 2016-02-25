@@ -46,9 +46,9 @@ namespace Lanem
                 WebConfigurationManager.AppSettings["Lanem_Log_Directory_Path"]);
 
             return new FileErrorLogger(
-                new NoErrorFilter(),
+                new NoExceptionFilter(),
                 new HumanReadableErrorParser(),
-                new FileNameGenerator(errorLogPath),
+                new LogFileNameGenerator(errorLogPath),
                 new FileWriter());
         }
 
