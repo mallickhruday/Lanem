@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileErrorLoggerTests.cs" />
     <Compile Include="FileNameGeneratorTests.cs" />
     <Compile Include="HttpRequestExtensionTests.cs" />
     <Compile Include="NoExceptionFilterTests.cs" />
