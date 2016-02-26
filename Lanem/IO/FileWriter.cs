@@ -1,12 +1,15 @@
 using System.IO;
+using Guardo;
 
 namespace Lanem.IO
 {
     public sealed class FileWriter : IFileWriter
     {
-        public void Write(string filePath, string content)
+        public void Write(string fileName, string content)
         {
-            File.WriteAllText(filePath, content);
+            Requires.NotNullOrEmpty(fileName);
+
+            File.WriteAllText(fileName, content);
         }
     }
 }

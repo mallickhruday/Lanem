@@ -1,4 +1,4 @@
-﻿using System.Web.UI.WebControls;
+﻿using Guardo;
 using Lanem.Filters;
 using Lanem.IO;
 using Lanem.Parsers;
@@ -18,18 +18,10 @@ namespace Lanem.Loggers
             IFileNameGenerator fileNameGenerator,
             IFileWriter fileWriter)
         {
-            // SantaClause
-            // Guardo
-
-            // Throw.IfNull(exceptionFilter);
-
-            // Validate.NotNull(exceptionFilter);
-
-            // Requires.NotNull
-
-            // MustBe.NotNull
-
-            // 
+            Requires.NotNull(exceptionFilter, nameof(exceptionFilter));
+            Requires.NotNull(errorParser, nameof(errorParser));
+            Requires.NotNull(fileNameGenerator, nameof(fileNameGenerator));
+            Requires.NotNull(fileWriter, nameof(fileWriter));
 
             _exceptionFilter = exceptionFilter;
             _errorParser = errorParser;
@@ -39,6 +31,8 @@ namespace Lanem.Loggers
 
         public void Log(Error error)
         {
+            Requires.NotNull(error, nameof(error));
+
             if (_exceptionFilter.SkipException(error.Exception))
                 return;
 

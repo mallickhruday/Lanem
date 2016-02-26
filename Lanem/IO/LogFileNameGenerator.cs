@@ -1,4 +1,5 @@
 ﻿using System;
+using Guardo;
 
 namespace Lanem.IO
 {
@@ -8,11 +9,7 @@ namespace Lanem.IO
 
         public LogFileNameGenerator(string logDirectoryPath)
         {
-            if (logDirectoryPath == null)
-                throw new ArgumentNullException(nameof(logDirectoryPath));
-
-            if (logDirectoryPath.Length == 0)
-                throw new ArgumentException("The log directory path cannot be empty.", nameof(logDirectoryPath));
+            Requires.NotNullOrEmpty(logDirectoryPath, nameof(logDirectoryPath));
 
             _logDirectoryPath = logDirectoryPath;
         }

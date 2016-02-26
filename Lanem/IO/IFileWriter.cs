@@ -8,8 +8,8 @@
         /// <summary>
         /// Writes content synchronously into a file.
         /// </summary>
-        /// <param name="filePath">Full file name of the file to be written to.</param>
+        /// <param name="fileName">Full file name of the file to be written to.</param>
         /// <param name="content">Content to be written into the file.</param>
-        void Write(string filePath, string content);
+        void Write(string fileName, string content);
     }
 }

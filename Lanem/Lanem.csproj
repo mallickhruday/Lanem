@@ -76,7 +76,6 @@
     <Compile Include="IO\FileWriter.cs" />
     <Compile Include="Filters\IExceptionFilter.cs" />
     <Compile Include="IErrorLogger.cs" />
-    <Compile Include="Loggers\Requires.cs" />
     <Compile Include="Parsers\IErrorParser.cs" />
     <Compile Include="Parsers\HumanReadableErrorParser.cs" />
     <Compile Include="IO\IFileWriter.cs" />

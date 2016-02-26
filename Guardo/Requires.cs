@@ -3,7 +3,7 @@ using System;
 namespace Guardo
 {
     /// <summary>
-    /// Defines methods to validate method arguments.
+    /// Defines routines to validate method arguments.
     /// </summary>
     public static class Requires
     {
