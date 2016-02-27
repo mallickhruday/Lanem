@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web;
+using Guardo;
 
 namespace Lanem
 {
@@ -9,13 +10,27 @@ namespace Lanem
     public sealed class Error
     {
         /// <summary>
-        /// The exception which has been raised during an ASP.NET web request.
+        /// Initializes a new error object.
         /// </summary>
-        public Exception Exception { get; set; }
+        /// <param name="exception">The exception which has been raised during an ASP.NET web request.</param>
+        /// <param name="httpRequest">The HTTP request during which an exception has been raised.</param>
+        public Error(Exception exception, HttpRequestBase httpRequest)
+        {
+            Requires.NotNull(exception);
+            Requires.NotNull(httpRequest);
+
+            Exception = exception;
+            HttpRequest = httpRequest;
+        }
 
         /// <summary>
-        /// The http request during which an exception has been raised.
+        /// The exception which has been raised during an ASP.NET web request.
         /// </summary>
-        public HttpRequest HttpRequest { get; set; }
+        public Exception Exception { get; }
+
+        /// <summary>
+        /// The HTTP request during which an exception has been raised.
+        /// </summary>
+        public HttpRequestBase HttpRequest { get; }
     }
 }

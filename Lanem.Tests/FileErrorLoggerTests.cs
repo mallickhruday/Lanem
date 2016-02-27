@@ -1,4 +1,5 @@
 using System;
+using System.Web;
 using Lanem.Filters;
 using Lanem.IO;
 using Lanem.Loggers;
@@ -8,6 +9,27 @@ using NUnit.Framework;
 
 namespace Lanem.Tests
 {
+    [TestFixture]
+    public class HumanReadableErrorParserTests
+    {
+        private IErrorParser _errorParser;
+
+        [SetUp]
+        public void Setup()
+        {
+            _errorParser = new HumanReadableErrorParser();
+        }
+
+        [Test]
+        public void Parse_Null_Error_Throws_Exception()
+        {
+            Assert.Throws<ArgumentNullException>(() => _errorParser.Parse(null));
+        }
+
+        //[Test]
+        //public void Parse_
+    }
+
     [TestFixture]
     public class FileErrorLoggerTests
     {
@@ -86,7 +108,8 @@ namespace Lanem.Tests
         public void Log_Checks_If_Error_Should_Get_Skipped()
         {
             var exception = new Exception();
-            var error = new Error { Exception = exception };
+            var httpRequest = Substitute.For<HttpRequestBase>();
+            var error = new Error(exception, httpRequest);
 
             _errorLogger.Log(error);
 
@@ -97,9 +120,11 @@ namespace Lanem.Tests
         [Test]
         public void Log_Does_Not_Parse_Error_When_Error_Gets_Filtered()
         {
+            var exception = new Exception();
+            var httpRequest = Substitute.For<HttpRequestBase>();
             _exceptionFilter.SkipException(null).ReturnsForAnyArgs(true);
 
-            _errorLogger.Log(new Error());
+            _errorLogger.Log(new Error(exception, httpRequest));
 
             _errorParser.DidNotReceiveWithAnyArgs().Parse(null);
         }
@@ -107,9 +132,11 @@ namespace Lanem.Tests
         [Test]
         public void Log_Does_Not_Generate_FileName_When_Error_Gets_Filtered()
         {
+            var exception = new Exception();
+            var httpRequest = Substitute.For<HttpRequestBase>();
             _exceptionFilter.SkipException(null).ReturnsForAnyArgs(true);
 
-            _errorLogger.Log(new Error());
+            _errorLogger.Log(new Error(exception, httpRequest));
             
             _fileNameGenerator.DidNotReceiveWithAnyArgs().GenerateFileName();
         }
@@ -117,9 +144,11 @@ namespace Lanem.Tests
         [Test]
         public void Log_Does_Not_Write_To_File_When_Error_Gets_Filtered()
         {
+            var exception = new Exception();
+            var httpRequest = Substitute.For<HttpRequestBase>();
             _exceptionFilter.SkipException(null).ReturnsForAnyArgs(true);
 
-            _errorLogger.Log(new Error());
+            _errorLogger.Log(new Error(exception, httpRequest));
             
             _fileWriter.DidNotReceiveWithAnyArgs().Write(null, null);
         }
@@ -127,7 +156,9 @@ namespace Lanem.Tests
         [Test]
         public void Log_Parses_Error_When_Error_Did_Not_Get_Filtered()
         {
-            var error = new Error();
+            var exception = new Exception();
+            var httpRequest = Substitute.For<HttpRequestBase>();
+            var error = new Error(exception, httpRequest);
 
             _errorLogger.Log(error);
 
@@ -138,7 +169,10 @@ namespace Lanem.Tests
         [Test]
         public void Log_Generates_FileName_When_Error_Did_Not_Get_Filtered()
         {
-            _errorLogger.Log(new Error());
+            var exception = new Exception();
+            var httpRequest = Substitute.For<HttpRequestBase>();
+
+            _errorLogger.Log(new Error(exception, httpRequest));
 
             _fileNameGenerator.ReceivedWithAnyArgs(1).GenerateFileName();
         }
@@ -146,13 +180,15 @@ namespace Lanem.Tests
         [Test]
         public void Log_Writes_Error_To_File_When_Error_Did_Not_Get_Filtered()
         {
+            var exception = new Exception();
+            var httpRequest = Substitute.For<HttpRequestBase>();
             const string parsedError = "randomly parsed error";
             const string fileName = "this is a random file name";
 
             _errorParser.Parse(null).ReturnsForAnyArgs(parsedError);
             _fileNameGenerator.GenerateFileName().ReturnsForAnyArgs(fileName);
 
-            _errorLogger.Log(new Error());
+            _errorLogger.Log(new Error(exception, httpRequest));
 
             _fileWriter.ReceivedWithAnyArgs(1).Write(null, null);
             _fileWriter.Received().Write(fileName, parsedError);

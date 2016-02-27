@@ -31,11 +31,9 @@ namespace Lanem
         {
             var errorLogger = CreateErrorLogger(application);
 
-            var error = new Error
-            {
-                Exception = exception,
-                HttpRequest = application.Request
-            };
+            var error = new Error(
+                exception,
+                new HttpRequestWrapper(application.Request));
 
             errorLogger.Log(error);
         }
