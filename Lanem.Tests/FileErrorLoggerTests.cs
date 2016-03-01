@@ -10,14 +10,16 @@ using NUnit.Framework;
 namespace Lanem.Tests
 {
     [TestFixture]
-    public class HumanReadableErrorParserTests
+    public class TextErrorParserTests
     {
         private IErrorParser _errorParser;
+        private readonly DateTime _utcNow = DateTime.UtcNow;
 
         [SetUp]
         public void Setup()
         {
-            _errorParser = new HumanReadableErrorParser();
+            DateTimeProvider.SetUtcNow(_utcNow);
+            _errorParser = new TextErrorParser();
         }
 
         [Test]

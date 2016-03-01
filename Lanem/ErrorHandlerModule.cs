@@ -30,7 +30,7 @@ namespace Lanem
         protected virtual void LogError(HttpApplication application, Exception exception)
         {
             var errorLogger = CreateErrorLogger(application);
-
+            
             var error = new Error(
                 exception,
                 new HttpRequestWrapper(application.Request));
@@ -45,7 +45,7 @@ namespace Lanem
 
             return new FileErrorLogger(
                 new NoExceptionFilter(),
-                new HumanReadableErrorParser(),
+                new TextErrorParser(),
                 new LogFileNameGenerator(errorLogPath),
                 new FileWriter());
         }
