@@ -1,8 +1,11 @@
 using System;
 
-namespace Lanem.Parsers
+namespace Lanem.Common
 {
-    public sealed class DateTimeProvider
+    /// <summary>
+    /// Wraps static members from the <see cref="DateTime"/> class with the possibility to override values from a test context.
+    /// </summary>
+    public static class DateTimeProvider
     {
         private static DateTime? _utcNow;
 

@@ -10,29 +10,6 @@ using NUnit.Framework;
 namespace Lanem.Tests
 {
     [TestFixture]
-    public class TextErrorParserTests
-    {
-        private IErrorParser _errorParser;
-        private readonly DateTime _utcNow = DateTime.UtcNow;
-
-        [SetUp]
-        public void Setup()
-        {
-            DateTimeProvider.SetUtcNow(_utcNow);
-            _errorParser = new TextErrorParser();
-        }
-
-        [Test]
-        public void Parse_Null_Error_Throws_Exception()
-        {
-            Assert.Throws<ArgumentNullException>(() => _errorParser.Parse(null));
-        }
-
-        //[Test]
-        //public void Parse_
-    }
-
-    [TestFixture]
     public class FileErrorLoggerTests
     {
         private IExceptionFilter _exceptionFilter;

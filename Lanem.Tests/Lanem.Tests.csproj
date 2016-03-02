@@ -53,7 +53,6 @@
   <ItemGroup>
     <Compile Include="FileErrorLoggerTests.cs" />
     <Compile Include="FileNameGeneratorTests.cs" />
-    <Compile Include="HttpRequestExtensionTests.cs" />
     <Compile Include="NoExceptionFilterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

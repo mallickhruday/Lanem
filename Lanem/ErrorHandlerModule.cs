@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web;
 using System.Web.Configuration;
+using Lanem.Common;
 using Lanem.Filters;
 using Lanem.IO;
 using Lanem.Loggers;
@@ -45,7 +46,8 @@ namespace Lanem
 
             return new FileErrorLogger(
                 new NoExceptionFilter(),
-                new TextErrorParser(),
+                new TextErrorParser(
+                    new HttpRequestConverter()),
                 new LogFileNameGenerator(errorLogPath),
                 new FileWriter());
         }

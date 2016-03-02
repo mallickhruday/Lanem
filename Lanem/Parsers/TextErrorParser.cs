@@ -1,19 +1,25 @@
 using System;
 using System.Text;
 using Guardo;
-using Lanem.Extensions;
+using Lanem.Common;
 
 namespace Lanem.Parsers
 {
     public sealed class TextErrorParser : IErrorParser
     {
+        private readonly IHttpRequestConverter _httpRequestConverter;
         private const string DefaultIndent = "  ";
+
+        public TextErrorParser(IHttpRequestConverter httpRequestConverter)
+        {
+            _httpRequestConverter = httpRequestConverter;
+        }
 
         public string Parse(Error error)
         {
             Requires.NotNull(error);
             
-            var rawRequest = error.HttpRequest.ToRawString();
+            var rawRequest = _httpRequestConverter.ToRawString(error.HttpRequest);
             var ex = error.Exception;
             
             var sb = new StringBuilder();
