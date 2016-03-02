@@ -51,8 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DateTimeProviderTests.cs" />
     <Compile Include="FileErrorLoggerTests.cs" />
     <Compile Include="FileNameGeneratorTests.cs" />
+    <Compile Include="HttpRequestConverterTests.cs" />
     <Compile Include="NoExceptionFilterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -14,6 +14,11 @@ namespace Lanem.Common
             _utcNow = utcNow;
         }
 
+        public static void Reset()
+        {
+            _utcNow = null;
+        }
+
         public static DateTime UtcNow => _utcNow ?? DateTime.UtcNow;
     }
 }
