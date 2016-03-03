@@ -1,10 +1,31 @@
 using System;
+using System.Diagnostics;
 using System.Threading;
 using Lanem.Common;
 using NUnit.Framework;
 
 namespace Lanem.Tests
 {
+    [TestFixture]
+    public class FileWriterTests
+    {
+        private string _directoryPath;
+
+        [SetUp]
+        public void Setup()
+        {
+            _directoryPath = TestContext.CurrentContext.WorkDirectory;
+        }
+
+        [Test]
+        public void Test()
+        {
+            //System.Diagnostics.
+            Debug.WriteLine(_directoryPath);
+            Console.WriteLine(_directoryPath);
+        }
+    }
+
     [TestFixture]
     public class DateTimeProviderTests
     {
