@@ -7,5 +7,5 @@ $nuspecFiles = Get-ChildItem -Filter *.nuspec -Recurse
 
 foreach($nuspecFile in $nuspecFiles)
 {
-    NuGet.exe pack $nuspecFile.FullName.Replace(".nuspec", ".csproj") -Version $semanticVersion -Symbols
+    NuGet.exe pack $nuspecFile.FullName.Replace(".nuspec", ".csproj") -Version $semanticVersion -Symbols -Prop Configuration="Release 4.6"
 }

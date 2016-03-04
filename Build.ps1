@@ -1,6 +1,6 @@
 # Add/Remove build configurations as needed
 $buildConfigurations = @(
-    "Release",
+    "Release 4.6",
     "Release 4.5",
     "Release 4.0",
     "Release 3.5"

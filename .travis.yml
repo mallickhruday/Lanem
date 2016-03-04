@@ -1,0 +1,8 @@
+language: csharp
+solution: Lanem.sln
+install:
+  - nuget restore Lanem.sln
+  - nuget install NUnit.Console -Version 3.0.1 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration="Release 4.5" Lanem.sln
+  - mono ./testrunner/NUnit.Console.3.0.1/tools/nunit3-console.exe "./Lanem.Tests/bin/Release 4.5/Lanem.Tests.dll"
