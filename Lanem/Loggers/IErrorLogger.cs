@@ -1,4 +1,4 @@
-namespace Lanem
+namespace Lanem.Loggers
 {
     /// <summary>
     /// Defines a single method to log <see cref="Error"/> information.

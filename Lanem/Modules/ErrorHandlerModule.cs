@@ -7,7 +7,7 @@ using Lanem.IO;
 using Lanem.Loggers;
 using Lanem.Parsers;
 
-namespace Lanem
+namespace Lanem.Modules
 {
     public class ErrorHandlerModule : IHttpModule
     {
