@@ -182,4 +182,4 @@ DNT: 1
 
 Feedback is more than welcome and pull requests get accepted!
 
-You can either contact me via GitHub or find me on [http://dusted.codes](http://dusted.codes/).
+File an [issue on GitHub](https://github.com/dustinmoris/Lanem/issues/new) or contact me via [https://dusted.codes/about](https://dusted.codes/about).
