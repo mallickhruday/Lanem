@@ -3,7 +3,8 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/ta3vwfttw0g85l2a/branch/master?svg=true)](https://ci.appveyor.com/project/dustinmoris/lanem/branch/master)
 [![NuGet Info](https://buildstats.info/nuget/Lanem)](https://www.nuget.org/packages/Lanem/)
-[![Build status](https://buildstats.info/appveyor/chart/dustinmoris/Lanem)](https://ci.appveyor.com/project/dustinmoris/Lanem/history)
+
+[![Build history](https://buildstats.info/appveyor/chart/dustinmoris/Lanem)](https://ci.appveyor.com/project/dustinmoris/Lanem/history)
 
 ## About
 Lanem is an extremely light weight HttpModule to globally handle ASP.NET errors.
@@ -179,6 +180,6 @@ DNT: 1
 
 ## Contribution
 
-Feedback is more than welcome and pull requests are accepted!
+Feedback is more than welcome and pull requests get accepted!
 
 You can either contact me via GitHub or find me on [http://dusted.codes](http://dusted.codes/).
